@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-x: hidden; 
+}
+
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+/* styles/globals.css or styles/Home.module.css */
+
+.video-container {
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.video {
+  width: 500px;
+  height: auto;
+  outline: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.container1{
+  background: rgb(0, 16, 95);
+  overflow: hidden;
+}

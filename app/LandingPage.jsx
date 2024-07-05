@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button"
 import VideoPlayer from "@/components/videoPlayer"
 import  { Card, CardContent } from "@/components/ui/card"
 export default function LandingPage() {
+  const phoneNumber = '256775703621'; // Replace with the actual phone number, including the country code
+  const message = 'Hello, I would like to know more about your services!'; // Optional: Pre-filled message
+
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
   return (
     <div className=" mt-4 flex flex-col items-center justify-center pt-24 w-full min-h-screen bg-gray-100">
       <div className="flex flex-col items-start justify-between w-full max-w-6xl p-8 bg-white rounded-lg shadow-lg md:flex-row">
@@ -18,10 +23,12 @@ export default function LandingPage() {
             The most talented minds work hand in hand with you to produce your unique and high-performing website.
           </p>
           <div className="flex mt-6 space-x-4">
+            <Link href={whatsappUrl}>
             <Button className="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center">
               <MessageCircleIcon className="mr-2" />
               WORK WITH US
             </Button>
+            </Link>
             <Button className="bg-green-100 text-green-700 px-4 py-2 rounded-lg flex items-center">
               <PhoneIcon className="mr-2" />
               CALL US : +256 750900962
@@ -32,12 +39,14 @@ export default function LandingPage() {
           <VideoPlayer />
         </div>
       </div>
+      <Link href={whatsappUrl}>
       <div className="fixed bottom-4 right-4">
         <Button className="bg-green-500 text-white px-4 py-2 rounded-full flex items-center">
           <MessageCircleIcon className="mr-2" />
           We are Online! How may I help you today?
         </Button>
       </div>
+      </Link>
       <div className="bg-white text-gray-800 mt-8">
       <header className="text-center p-6 bg-gray-200">
         <div className="container mx-auto">

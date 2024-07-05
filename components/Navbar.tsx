@@ -15,6 +15,11 @@ import { Button } from '@/components/ui/button';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const phoneNumber = '256775703621'; // Replace with the actual phone number, including the country code
+  const message = 'Hello, I would like to know more about your services!'; // Optional: Pre-filled message
+
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -83,13 +88,14 @@ const Navbar = () => {
           </NavigationMenu>
         </nav>
         <div className="flex items-center gap-4 lg:hidden">
+        <Link href={whatsappUrl}>
         <Image
               src="/whatsapp.gif"
               alt="logo"
               width={44}
               height={44}
               className="text-white mt-2 h-full object-contain rounded-full"
-            />
+            /></Link>
           <Button variant="ghost" size="icon" className="rounded-full" onClick={toggleMenu}>
       {isMenuOpen ? (
         <>

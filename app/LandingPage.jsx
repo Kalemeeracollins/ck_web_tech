@@ -84,8 +84,8 @@ export default function LandingPage() {
           <div className="w-1/3">
           <Link href="https://troniq.boogiecoin.com/">
             <Image
-              src="/project3.png" // Update the path to your project images
-              alt="Project 3"
+              src="/tronq.jpg" // Update the path to your project images
+              alt="tronq"
               width={500}
               height={300}
             />
